@@ -25,8 +25,8 @@ public class ConsoleApplication implements CommandLineRunner {
 		FOOD[] SORTEDFOOD = foodService.sortFoods(unsortedFoods);
 		
 //		//print result
-		for (final FOOD potato : Arrays.asList(SORTEDFOOD)) {
-			System.out.println(potato.whoAMI() + " " + potato.size);
+		for (final FOOD food : Arrays.asList(SORTEDFOOD)) {
+			System.out.println(food.whoAMI() + " " + food.size);
 		}
 	}
 }

@@ -5,8 +5,6 @@ public abstract class FOOD {
 	public String whoAMI = "FOOD";
 
 	public String whoAMI() {
-//		return this.getClass().getName()
-//				.substring(MgmInterviewFoodSort.class.getName().length() + 1);
-		return whoAMI;
+		return this.getClass().getSimpleName();
 	}
 }
