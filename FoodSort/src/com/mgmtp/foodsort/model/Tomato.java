@@ -1,11 +1,11 @@
 package com.mgmtp.foodsort.model;
 
 public class Tomato extends FOOD {
-	public int size = 121;
+	// default size for tomato
+	//public int size = 121;  //hides FOOD size
 	
-//	public Tomato(String food) {
-//		super(food);
-//	}
-
-	
+	public Tomato() {
+		super.whoAMI = "Tomato";
+		super.size = 121;
+	}	
 }

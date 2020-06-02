@@ -1,5 +1,9 @@
 package com.mgmtp.foodsort.service;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.mgmtp.foodsort.model.FOOD;
@@ -45,16 +49,16 @@ public class FoodServiceImpl implements FoodService {
 		return potatoes;
 	}
 
-	public FOOD[] sortFoods(FOOD[] foods) {
+	public FOOD[] sortFoodsOriginal(FOOD[] foods) {
 		final FOOD[] SORTEDFOOD = new FOOD[10];
 		for (int i = 0; i < 10; i++) {
-//			final int index_of_the_smaller_food=i;
-			int index_of_the_smaller_food=i;
+//			final int index_of_the_smaller_food=i;  //final is immutable
+			int index_of_the_smaller_food = i; 
 			for (int j = i; j < 10; j++) {
 				if(foods[index_of_the_smaller_food].size > foods[j].size){
 					index_of_the_smaller_food=j;
 				}
-				if(foods[index_of_the_smaller_food].size == foods[j].size && foods[index_of_the_smaller_food].whoAMI().contains("Tomato")){
+				if(foods[index_of_the_smaller_food].size == foods[j].size && foods[index_of_the_smaller_food].whoAMI.contains("Tomato")){
 					index_of_the_smaller_food=j;
 				}
 			}
@@ -63,11 +67,12 @@ public class FoodServiceImpl implements FoodService {
 		}
 		
 		return SORTEDFOOD;
-
-//		//print result
-//		for (final FOOD potato : Arrays.asList(SORTEDFOOD)) {
-//			System.out.println(potato.whoAMI() + " " + potato.size);
-//		}
+	}
+	public List<FOOD> sortFoodsLambda(List<FOOD> foods) {
+		foods.sort(Comparator
+			    .comparing(FOOD::getSize)
+			    .thenComparing(FOOD::getWhoAMI));
+		return foods;
 	}
 
 }

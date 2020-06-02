@@ -22,11 +22,11 @@ public class ConsoleApplication implements CommandLineRunner {
 
 	public void run(String... args) throws Exception {
 		FOOD[] unsortedFoods = foodService.initilizeFood();
-		FOOD[] SORTEDFOOD = foodService.sortFoods(unsortedFoods);
+		FOOD[] SORTEDFOOD = foodService.sortFoodsOriginal(unsortedFoods);
 		
 //		//print result
 		for (final FOOD food : Arrays.asList(SORTEDFOOD)) {
-			System.out.println(food.whoAMI() + " " + food.size);
+			System.out.println(food.getWhoAMI() + " " + food.size);
 		}
 	}
 }
