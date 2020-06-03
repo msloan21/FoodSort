@@ -119,6 +119,28 @@ public class FoodServiceTest {
 	}
 	
 	@Test
+	public void testCreateAllFoodsExisting() {
+		Potato p1 = new Potato();
+		p1.setSize(4);
+		
+		Tomato t1 = new Tomato();
+		t1.setSize(2);
+		
+		Food[] foodArry = {p1, t1};	
+		Iterable<Food> foods = Arrays.asList(foodArry);
+		
+		Mockito.when(mockRepo.findAll()).thenReturn(foods);
+		Mockito.when(mockRepo.save(Mockito.any(Food.class))).thenReturn(new Potato());
+		
+		Response resp = service.createAllFoods();
+		
+		assertNotNull(resp);
+		assertTrue(resp.getMessage().equals("Foods already exist."));
+		Mockito.verify(mockRepo, Mockito.times(0)).save(Mockito.any(Food.class));
+
+	}
+	
+	@Test
 	public void testDeleteAllFoods() {
 		Mockito.doNothing().when(mockRepo).deleteAll();
 		

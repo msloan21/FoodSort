@@ -92,11 +92,18 @@ public class FoodServiceImpl implements FoodService {
 
 	@Override
 	public Response createAllFoods() {
+		Response resp = new Response();
+		Iterable<Food> existing = foodRepo.findAll();
+		if(StreamSupport.stream(existing.spliterator(), false).count() > 0) {
+			resp.setMessage("Foods already exist.");
+			return resp;
+		}
+		
 		List<Food> foods = initilizeFood();
 		foods.forEach(food -> this.foodRepo.save(food));
 		
 		
-		return new Response();
+		return resp;
 	}
 
 	@Override

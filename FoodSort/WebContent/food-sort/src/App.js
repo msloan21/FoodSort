@@ -1,49 +1,20 @@
 import React from 'react';
+import Actions from './components/Actions.react';
 import logo from './mgm-Logo-1.svg';
 import './App.css';
+import Content from "./components/Content.react";
+
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          MGM Interview Food Sort
-        </p>
-
-        <a
-          className="App-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Create Data
-        </a>
-        <a
-        className="App-link"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-            >
-            Delete Data
-        </a>
-        <a
-        className="App-link"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-            >
-            Sort Data
-        </a>
-        <a
-        className="App-link"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-            >
-            Unsort Data
-        </a>
       </header>
+        <h1>MGM Interview Food Sort</h1>
+        <Actions/>
+        <Content/>
     </div>
   );
 }
