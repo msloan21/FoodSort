@@ -20,6 +20,8 @@ Then start the included front end server using:
 
 yarn start
 
+![yarn start](https://github.com/msloan21/FoodSort/blob/master/Screen%20Shot%202020-06-03%20at%204.39.21%20PM.png)
+
 Please do not change the default port configuration of 3000.
 
 
