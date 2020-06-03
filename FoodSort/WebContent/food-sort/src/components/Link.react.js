@@ -19,7 +19,7 @@ class Link extends Component {
     render() {
         return (
             <div>
-                <a href={'#'} onClick={this.handleOnClick}><h3>{this.props.label}</h3></a>
+                <a href="/#"onClick={this.handleOnClick}><h3>{this.props.label}</h3></a>
             </div>
     );
     }

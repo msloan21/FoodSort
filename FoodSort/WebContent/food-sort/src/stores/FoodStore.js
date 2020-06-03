@@ -1,5 +1,4 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import Events from 'events';
 import EventEmitter from 'events';
 import assign from 'object-assign';
 
