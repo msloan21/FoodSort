@@ -5,8 +5,11 @@ A sample application developed for MGMTP.
 ## Getting Started
 There are two ways to run this application.  The first uses Spring Boot's Command Line Runner and can be ran by opening a Java IDE and running com.mgmtp.foodsort.ConsoleApplication
 
+![ConsoleApplication.java](https://github.com/msloan21/FoodSort/blob/master/Screen%20Shot%202020-06-03%20at%204.31.01%20PM.png)
+
 The other way is as a RESTful web service, in memory database and a simple React front end.  To start the service, open a Java IDE
 and run com.mgmtp.foodsort.WebApplication.  Please do not change the default port configuration of 8080.
+![WebApplication.java](https://github.com/msloan21/FoodSort/blob/master/Screen%20Shot%202020-06-03%20at%204.31.01%20PM.png)
 
 Next open a command prompt and cd to:
 
