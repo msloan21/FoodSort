@@ -1,11 +1,14 @@
 package com.mgmtp.foodsort.model;
 
-public class Tomato extends FOOD {
+import javax.persistence.Entity;
+
+@Entity
+public class Tomato extends Food {
 	// default size for tomato
 	//public int size = 121;  //hides FOOD size
 	
 	public Tomato() {
-		super.whoAMI = "Tomato";
-		super.size = 121;
+		super.setWhoAMI("Tomato");
+		super.setSize(121);
 	}	
 }

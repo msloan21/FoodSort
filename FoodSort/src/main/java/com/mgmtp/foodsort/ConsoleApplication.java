@@ -1,15 +1,21 @@
 package com.mgmtp.foodsort;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.mgmtp.foodsort.model.FOOD;
+import com.mgmtp.foodsort.model.Food;
 import com.mgmtp.foodsort.service.FoodService;
 
+/**
+ * 
+ * @author Matt
+ *
+ */
 @SpringBootApplication
 public class ConsoleApplication implements CommandLineRunner {
 	
@@ -21,12 +27,11 @@ public class ConsoleApplication implements CommandLineRunner {
     }
 
 	public void run(String... args) throws Exception {
-		FOOD[] unsortedFoods = foodService.initilizeFood();
-		FOOD[] SORTEDFOOD = foodService.sortFoodsOriginal(unsortedFoods);
+		List<Food> unsortedFoods = foodService.initilizeFood();
+		Food[] sortedFoods = foodService.sortFoodsOriginal(unsortedFoods);
 		
-//		//print result
-		for (final FOOD food : Arrays.asList(SORTEDFOOD)) {
-			System.out.println(food.getWhoAMI() + " " + food.size);
+		for (final Food food : Arrays.asList(sortedFoods)) {
+			System.out.println(food.getWhoAMI() + " " + food.getSize());
 		}
 	}
 }
