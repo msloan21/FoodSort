@@ -16,7 +16,11 @@ Next open a command prompt and cd to:
 
 %PROJECT_HOME%/FoodSort/Web Content/foodsort
 
-Then start the included front end server using:
+Install the required npm packages with:
+
+npm install
+
+Once the install is done, start the included front end server using:
 
 yarn start
 
